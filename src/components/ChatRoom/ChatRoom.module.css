@@ -1,0 +1,50 @@
+.main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+}
+
+.main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.main::-webkit-scrollbar-track {
+  background: #54bab9;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: #54bab9;
+}
+
+.form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  background-color: #54bab9;
+  width: 100%;
+  max-width: 100vw;
+  font-size: 1.5rem;
+
+  display: flex;
+}
+
+.formButton {
+  width: 10%;
+  background-color: #54bab9;
+}
+
+.formInput {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background: #9ed2c6;
+  color: gray;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
