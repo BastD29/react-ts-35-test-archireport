@@ -12,11 +12,7 @@ function GoogleLogin() {
 
   return (
     <>
-      <button
-        /* className="sign-in" */
-        className={styles.googleLoginButton}
-        onClick={signInWithGoogle}
-      >
+      <button className={styles.googleLoginButton} onClick={signInWithGoogle}>
         Login with Google 👀🚀
       </button>
     </>

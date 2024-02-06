@@ -9,11 +9,6 @@ export type UserType = {
 function Header({ user }: UserType) {
   return (
     <header className={styles.header}>
-      {/* <div className={styles.logo}>Logo</div> */}
-      {/* <img
-        className={styles.logo}
-        src={user ? user?.photoURL : <div>Logo</div>}
-      /> */}
       {user?.photoURL ? (
         <img className={styles.logo} src={user.photoURL} alt="User" />
       ) : (

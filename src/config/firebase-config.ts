@@ -1,6 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import {
+  CACHE_SIZE_UNLIMITED,
+  initializeFirestore,
+  persistentLocalCache,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -13,6 +17,14 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth();
-const firebaseFirestore = getFirestore(firebaseApp);
 
-export { firebaseApp, firebaseFirestore, firebaseAuth };
+// offline data persistence
+const firestoreDb = initializeFirestore(firebaseApp, {
+  localCache: persistentLocalCache(
+    /*settings*/ {
+      cacheSizeBytes: CACHE_SIZE_UNLIMITED,
+    }
+  ),
+});
+
+export { firebaseApp, firebaseAuth, firestoreDb };

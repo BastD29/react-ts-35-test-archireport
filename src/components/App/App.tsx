@@ -1,7 +1,6 @@
 import ChatRoom from "../ChatRoom/ChatRoom";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
 import Header from "../Header/Header";
-// import Login from "./components/Login/Login";
 
 import { firebaseAuth } from "../../config/firebase-config";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -16,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Header user={user} />
-      {/* <section>{user ? <ChatRoom /> : <Login />}</section> */}
       <section className={styles.section}>
         {user ? <ChatRoom /> : <GoogleLogin />}
       </section>
